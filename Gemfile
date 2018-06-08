@@ -37,7 +37,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 
 group :production do
-  gem 'pg'
+  #gem 'pg'
+  gem 'mysql2', '<0.5'
 end
 
 group :development, :test do
