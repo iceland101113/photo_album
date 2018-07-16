@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <br><br>
+    <%= link_to '+', new_admin_photo_path, :class=>"btn btn-default"%>
+    <br>
+    <br>
+    <table class="table table-bordered table-striped table-condensed">
+      <thead>
+        <tr>
+          <th>照片標題</th>
+          <th>縮圖</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @photos.each do |photo| %>
+        <tr>
+          <td><%= photo.title %></td>
+          <td><%= image_tag photo.file_location , class: "img-responsive center-block", width: '100px' %></td>
+          <td><%= link_to 'Show', admin_photo_path(photo) %>
+              <%= link_to 'Edit', edit_admin_photo_path(photo) %>
+              <%= link_to 'Destroy', admin_photo_path(photo), method: :delete, data:{ confirm: "Are you sure?" } %>  
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
+
+  </div>
+</div>

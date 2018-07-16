@@ -1,0 +1,17 @@
+<br>
+<br>
+<br>
+<div class="container" style="height:500px;">
+  <div class="row">
+    <div class="col-md-4">
+      <%= image_tag @photo.file_location.url, size: "300x300", class: "img-responsive"%>
+    </div>
+    <div class="col-md-6">
+      <h4><%= @photo.title %><h4><br>
+      <p><%= @photo.date %></p><br>
+      <p><%= simple_format(@photo.description) %></p>
+    </div>
+  </div>
+  <br>
+   <%= link_to 'Back to index', admin_photos_path, class: "btn btn-primary" %>
+</div>
