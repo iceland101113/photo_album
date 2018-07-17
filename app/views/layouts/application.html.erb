@@ -9,54 +9,53 @@
   </head>
 
   <body>
-  <header id="header">
+    <header id="header">
 
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <%= link_to image_tag('origami.png'), root_path, class: "navbar-brand" %>
-          <%= link_to "Origami Works", root_path, class: "navbar-brand" %> 
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <%= link_to image_tag('origami.png'), root_path, class: "navbar-brand" %>
+            <%= link_to "Origami Works", root_path, class: "navbar-brand" %> 
+          </div>
+
+
+
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="pull-right text-right nav navbar-nav">
+              <li><a href="#works">Latest Works</a></li>
+              <li><a href="#about">About The Design</a></li>
+              <li><%= link_to 'Admin', admin_root_path %></li>
+              <% if current_user %>
+                <li><%= link_to('登出', destroy_user_session_path, method: :delete) %></li>
+              <% else %>
+                <li><%= link_to('登入', new_user_session_path) %></li>
+              <% end %>
+            </ul>
+          </div>
         </div>
+      </nav>
 
-
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="pull-right text-right nav navbar-nav">
-            <li><a href="#works">Latest Works</a></li>
-            <li><a href="#about">About The Design</a></li>
-            <li><%= link_to 'Admin', admin_root_path %></li>
-            <% if current_user %>
-              <li><%= link_to('登出', destroy_user_session_path, method: :delete) %></li>
-            <% else %>
-              <li><%= link_to('登入', new_user_session_path) %></li>
-            <% end %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  </header>
+    </header>
     <%= yield %>
-  <footer id="footer">
-    <div class="container">
-      <div class="footer-content">
-        <p>&copy; 2018 HUEI YI CHENG | All Rights Reserved.</p>
-        <div class="footer-social-icon">
-<!--           <ul>
-            <li>
-              <a href=""><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></a>
-            </li>
-          </ul> -->
+    <footer id="footer">
+      <div class="container">
+        <div class="footer-content">
+          <p>&copy; 2018 HUEI YI CHENG | All Rights Reserved.</p>
+          <div class="footer-social-icon">
+            <a href="https://www.facebook.com/huiyi.cheng3"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+            <a href="https://github.com/iceland101113"><i class="fa fa-github-alt" aria-hidden="true"></i></a>
+            <a href="https://www.linkedin.com/in/huei-yi-cheng-4070a6123/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+            <a href="https://medium.com/@icelandcheng"><i class="fa fa-medium" aria-hidden="true"></i></a>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   </body>
 </html>
