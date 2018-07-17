@@ -33,9 +33,7 @@
               <li><a href="#about">About The Design</a></li>
               <li><%= link_to 'Admin', admin_root_path %></li>
               <% if current_user %>
-                <li><%= link_to('登出', destroy_user_session_path, method: :delete) %></li>
-              <% else %>
-                <li><%= link_to('登入', new_user_session_path) %></li>
+                <li><%= link_to('Log out', destroy_user_session_path, method: :delete) %></li>
               <% end %>
             </ul>
           </div>

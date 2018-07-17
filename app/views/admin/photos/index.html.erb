@@ -8,8 +8,9 @@
     <table class="table table-bordered table-striped table-condensed">
       <thead>
         <tr>
-          <th>照片標題</th>
-          <th>縮圖</th>
+          <th>Title</th>
+          <th>Thumbnail</th>
+          <th>Update time</th>
           <th>#</th>
         </tr>
       </thead>
@@ -18,14 +19,20 @@
         <tr>
           <td><%= photo.title %></td>
           <td><%= image_tag photo.file_location , class: "img-responsive center-block", width: '100px' %></td>
-          <td><%= link_to 'Show', admin_photo_path(photo) %>
-              <%= link_to 'Edit', edit_admin_photo_path(photo) %>
-              <%= link_to 'Destroy', admin_photo_path(photo), method: :delete, data:{ confirm: "Are you sure?" } %>  
+          <td><%= photo.updated_at %></td>
+          <td><%= link_to '<span class="glyphicon glyphicon-search"></span>'.html_safe, admin_photo_path(photo) %>
+              <%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_admin_photo_path(photo) %>
+              <%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, admin_photo_path(photo), method: :delete, data:{ confirm: "Are you sure?" } %>  
           </td>
         </tr>
       <% end %>
     </tbody>
     </table>
 
+    <div class="text-center">
+      <%= paginate @photos %>
+    </div>
+    
   </div>
+
 </div>

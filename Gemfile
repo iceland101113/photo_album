@@ -40,6 +40,8 @@ gem 'devise'
 
 gem "font-awesome-rails"
 
+gem 'kaminari'
+
 group :production do
   #gem 'pg'
   gem 'mysql2', '<0.5'
