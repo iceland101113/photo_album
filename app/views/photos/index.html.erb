@@ -18,7 +18,7 @@
       <h2>latest works</h2>
       <% @photos.each do |photo| %>
       <div class="col-sm-6 col-md-4 col-work">
-        <%= image_tag photo.file_location , class: "img-responsive center-block", width: '280px' %>
+        <%= image_tag photo.file_location, class: "origami-Img img-responsive center-block", width: '280px' %>
       </div>
       <% end %>
 
@@ -58,6 +58,37 @@
       </div>
     </div>
     <br>
+
+    <div id="myModal" class="modal">
+      <!-- The Close Button -->
+      <span class="close">&times;</span>
+
+      <!-- Modal Content (The Image) -->
+      <img class="modal-content" id="img01">
+
+      <div id="caption"></div>
+    </div>
   </section>
+  <script>
+      // Get the modal
+    var modal = document.getElementById('myModal');
+    var modalImg = document.getElementById("img01");
+    var captionText = document.getElementById("caption");
+
+    $( ".origami-Img" ).click(function() {
+        modal.style.display = "block";
+        modalImg.src = this.src;
+        captionText.innerHTML = this.alt;     
+    });
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() { 
+      modal.style.display = "none";
+    }
+
+  </script>
 
 
