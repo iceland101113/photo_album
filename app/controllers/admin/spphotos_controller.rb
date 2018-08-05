@@ -13,7 +13,7 @@ class Admin::SpphotosController < ApplicationController
   def create
     @photo = Spphoto.new(spphoto_params)
     if @photo.save
-      redirect_to admin_spphotos_path
+      redirect_to admin_photos_path
     else
       render :action => :new
     end
@@ -21,7 +21,7 @@ class Admin::SpphotosController < ApplicationController
 
   def update
     if @photo.update(spphoto_params)
-      redirect_to admin_spphoto_path(@photo)
+      redirect_to admin_photo_path(@photo)
     else
       render :action => :edit
     end
@@ -30,7 +30,7 @@ class Admin::SpphotosController < ApplicationController
   def destroy
     @photo.destroy
 
-    redirect_to admin_spphotos_path
+    redirect_to admin_photos_path
   end
 
   private
