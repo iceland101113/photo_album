@@ -25,7 +25,23 @@
   </div>
 </div>
 </section>
-  <section id="about" class="about_me clearfix">
+
+<section id="sp" >
+<div class="container">
+  <div class="row">
+    <br>
+    <br>
+    <h2>special works</h2>
+    <% @spphotos.each do |spphoto| %>
+    <%= image_tag spphoto.file_location, class: "origami-Img img-responsive center-block", width: '800px' %><br>
+    <% end %>
+    <br>
+    <br>
+  </div>
+</div> 
+</section>
+
+  <section id="about" class="about_me clearfix works">
     <div class="container">
       <br>
       <br>

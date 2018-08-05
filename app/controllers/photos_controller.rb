@@ -3,6 +3,7 @@ class PhotosController < ApplicationController
 
   def index
     @photos = Photo.all
+    @spphotos = Spphoto.all
   end
 
 

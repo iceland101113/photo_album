@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180715130236) do
+ActiveRecord::Schema.define(version: 20180805090156) do
 
   create_table "photos", force: :cascade do |t|
+    t.string "title"
+    t.date "date"
+    t.text "description"
+    t.string "file_location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spphotos", force: :cascade do |t|
     t.string "title"
     t.date "date"
     t.text "description"

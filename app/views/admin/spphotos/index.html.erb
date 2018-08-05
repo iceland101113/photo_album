@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <br>
+    <br><br>
+    <%= render partial: "admin/shared/link" %>
+    <%= link_to '+', new_admin_spphoto_path, :class=>"btn btn-default"%>
+    <br>
+    <br>
+    <table class="table table-bordered table-striped table-condensed">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Thumbnail</th>
+          <th>Update time</th>
+          <th>#</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @spphotos.each do |spphoto| %>
+        <tr>
+          <td><%= spphoto.title %></td>
+          <td><%= image_tag spphoto.file_location , class: "img-responsive center-block", width: '100px' %></td>
+          <td><%= spphoto.updated_at %></td>
+          <td><%= link_to '<span class="glyphicon glyphicon-search"></span>'.html_safe, admin_spphoto_path(photo) %>
+              <%= link_to '<span class="glyphicon glyphicon-pencil"></span>'.html_safe, edit_admin_spphoto_path(photo) %>
+              <%= link_to '<span class="glyphicon glyphicon-trash"></span>'.html_safe, admin_spphoto_path(photo), method: :delete, data:{ confirm: "Are you sure?" } %>  
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+    </table>
+
+    <div class="text-center">
+      <%= paginate @spphotos %>
+    </div>
+    
+  </div>
+
+</div>
