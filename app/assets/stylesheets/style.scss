@@ -24,7 +24,7 @@ header {
 }
 
 .home_bg {
-  background-image: image-url("origami3.jpg");
+  background-image: image-url("origami_cover.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -62,7 +62,7 @@ header {
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   position: absolute;
   left: 0;
   top: 0;
