@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180805090156) do
+ActiveRecord::Schema.define(version: 20210215060918) do
+
+  create_table "messages", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "subject"
+    t.string "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "photos", force: :cascade do |t|
     t.string "title"
@@ -19,6 +28,7 @@ ActiveRecord::Schema.define(version: 20180805090156) do
     t.string "file_location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "like", default: 0
   end
 
   create_table "spphotos", force: :cascade do |t|

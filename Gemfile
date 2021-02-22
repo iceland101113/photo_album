@@ -33,14 +33,14 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 gem 'carrierwave'
-
 gem 'devise'
-
 gem "font-awesome-rails"
-
 gem 'kaminari'
+gem 'sidekiq'
+gem 'pry'
+gem 'foreman', '~> 0.87.2'
+gem 'fog-aws'
 
 group :production do
   #gem 'pg'

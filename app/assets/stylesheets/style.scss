@@ -45,10 +45,11 @@ header {
   vertical-align: middle;
 }
 
-.container_table_cell h2,h3 {
+.container_table_cell h1,h3 {
   color: #fff;
   text-transform: capitalize;
-  font-size: 54px;
+  font-size: 150px;
+  opacity: 0.7;
 }
 
 .social_icons a {
@@ -85,25 +86,38 @@ h2 {
   padding: 0 15px;
 }
 
-.personal-info h3 {
-  font-size: 15px;
-  letter-spacing: 2px;
-  margin-bottom: 6px;
-  text-transform: capitalize;
+.personal-info {
+  padding: 0 15px;
 }
 
 .personal-info p {
   color: #767676;
   line-height: 24px;
   text-align: justify;
+  font-size: 18px;
 }
 
 
-.button-group .download_cv, .button-group .hire_me {
+.reference-info h3 {
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.reference-info p {
+  color: #767676;
+  line-height: 24px;
+  text-align: justify;
+  font-size: 18px;
+}
+
+
+.button-group .reference-book {
   display: inline-block;
 }
 
-.button-group .download_cv {
+.button-group .reference-book {
   margin-right: 18px;
 }
 
@@ -126,12 +140,44 @@ h2 {
   transition: all .4s linear;
 }
 
+.message-submit {
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px 38px;
+  text-transform: capitalize;
+  background: #000;
+  color: #fff;
+  -webkit-transition: all .4s linear;
+  -moz-transition: all .4s linear;
+  -ms-transition: all .4s linear;
+  -o-transition: all .4s linear;
+  transition: all .4s linear;
+}
+
+#message_message {
+  height: 200px;
+}
+
 .clearfix::after {
   content: '';
   display: table;
   clear: both;
 }
 
+.item-info{
+  position: absolute;
+  top: 2%;
+  left: 16%;
+  opacity: 0.5;
+}
+
+.item-info1{
+  position: absolute;
+  top: 80%;
+  left: 76%;
+  opacity: 0.5;
+  font-size: 25px;
+}
 
 /* The Modal (background) */
 .modal {
@@ -180,7 +226,7 @@ h2 {
 }
 
 /* The Close Button */
-.close {
+.pic-close {
     margin-top: 40px;
     position: absolute;
     top: 15px;
@@ -191,8 +237,8 @@ h2 {
     transition: 0.3s;
 }
 
-.close:hover,
-.close:focus {
+.pic-close:hover,
+.pic-close:focus {
     color: #bbb;
     text-decoration: none;
     cursor: pointer;

@@ -2,8 +2,8 @@
   <div class="overlay"></div> 
     <div class="container_table">
       <div class="container_table_cell">
-        <h2>hi, i'm 卉</h2>
-        <h3>here are my origami works</h3>
+        <h1>Huei's Origami</h1>
+        <h4 style="color: white">Take a look</h4>
         <div class="social_icons">
           <a href="#works"><i class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i></a>
         </div>
@@ -11,100 +11,140 @@
   </div>
 </section>
 <section id="works"  class="works">
-<div class="container">
-  <div class="row">
-    <br>
-    <br>
-      <h2>latest works</h2>
+  <div class="container">
+    <div class="row">
+      <br>
+      <br>
+      <h2>Work</h2>
       <% @photos.each do |photo| %>
-      <div class="col-sm-6 col-md-4 col-work">
-        <%= image_tag photo.file_location, class: "origami-Img img-responsive center-block", width: '280px', alt: photo.title %>
-      </div>
+        <div class="col-sm-6 col-md-4">
+          <div class="col-work">
+            <%= image_tag photo.file_location, class: "origami-Img img-responsive center-block", width: '280px', alt: photo.title %>
+          </div>
+          <div class="col-work">
+            <a class="like-button" href="javascript:void(0)" onclick='like(<%= photo.id %>)'>
+              <%= image_tag 'like.png', 
+                  class: "little-icon item-info", 
+                  width: "30px", 
+                  alt: '..', 
+                  data: { toggle: 'tooltip' }, 
+                  title: 'like' %>
+            </a>
+          </div>
+          <div class="item-info1" id="photo-<%= photo.id %>-count">
+            <strong><%= photo.like %></strong>
+          </div>
+        </div>
       <% end %>
-
+    </div>
   </div>
-</div>
-</section>
+  <div id="myModal" class="modal">
+    <!-- The Close Button -->
+    <span class="pic-close">&times;</span>
+    <!-- Modal Content (The Image) -->
+    <div id="caption"></div>
+    <img class="modal-content" id="img01">
 
-<section id="sp" >
+    <div id="caption"></div>
+  </div>
+</section>
+<!-- <section id="sp" > -->
 <div class="container">
   <div class="row">
     <br>
     <br>
-    <h2>special works</h2>
+    <!-- <h2>special works</h2> -->
     <% @spphotos.each do |spphoto| %>
-    <%= image_tag spphoto.file_location, class: "origami-Img img-responsive center-block", width: '800px', alt:spphoto.title %><br>
+    <%= image_tag spphoto.file_location, class: "img-responsive center-block", width: '800px', alt:spphoto.title %><br>
     <% end %>
     <br>
     <br>
   </div>
 </div> 
-</section>
-
-  <section id="about" class="about_me clearfix works">
-    <div class="container">
-      <br>
-      <br>
-      <h2>about the design</h2>
-
-      <div class="summary">
-        <div class="col-left">
-          <div class="col-md-6">
-            <%= image_tag "origami_book1.jpg", class: "img-responsive ", width: '250px' %>
-          </div>
-          <div class="col-md-6">
-            <%= image_tag "origami_book2.jpg", class: "img-responsive ", width: '250px' %>
-          </div>
+<!-- </section> -->
+<section id="about" class="about_me clearfix works">
+  <div class="container">
+    <br>
+    <br>
+    <h2>About</h2>
+    <div class="summary">
+      <div class="col-left">
+        <div class="col-md-6">
+          <a href="https://www.amazon.co.jp/%E5%88%87%E3%82%89%E3%81%9A%E3%81%AB1%E6%9E%9A%E3%81%A7%E6%8A%98%E3%82%8B%E3%81%A9%E3%81%86%E3%81%B6%E3%81%A4%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF-%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF-%E3%83%95%E3%83%81%E3%83%A2%E3%83%88%E3%83%A0%E3%83%8D%E3%82%B8/dp/4883377768">
+          <%= image_tag "origami_book1.jpg", class: "img-responsive ", width: '250px' %></a>
         </div>
-
-        <div class="col-right">
-          <div class="personal-info">
-            <p>I created most of my origami works by refering to MUNEJI FUCHIMOTO's books. He really design so many cute and vivid animals made by only one paper. It's just like a magic and you can't help but keep learning MUNEJI FUCHIMOTO magic trick to build new works. I highly recommend his two books "origami pet park" and "origami pet island". Two of these books cover are show as the pictures beside. If you wanna know where can buy these, click the button below. Hope who see this page can enjoy seeing the origami i build or getting the information you want!! </p>
+        <div class="col-md-6">
+          <a href="https://www.amazon.co.jp/%E5%88%87%E3%82%89%E3%81%9A%E3%81%AB1%E6%9E%9A%E3%81%A7%E6%8A%98%E3%82%8B%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88-%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89-%E3%83%95%E3%83%81%E3%83%A2%E3%83%88-%E3%83%A0%E3%83%8D%E3%82%B8/dp/4883379795">
+          <%= image_tag "origami_book2.jpg", class: "img-responsive ", width: '250px' %></a>
+        </div>
+      </div>
+      <div class="col-right">
+        <div class="reference-info">
+          <p>Hi I'm Huei, a software engineer who have great interest in learning new technology and making handicraft, especially for origami. I always obesess with origami, because it's like magic to transform a single sheet of paper into beautiful works. To share the beauty of origami and display some delicate animal origami works which I recently made, I built this website, and hoping those origami works could bring people some delight and joy.
+          </p>
+          <p>Origami model which display in this website are designed by professional origami master, Muneji Fuchimoto who really share many design of beautiful orgami models in his books, which are "origami pet park" and "origami pet island".
+          </p>
+        </div>
+        <div class="button-group">
+          <div class="reference-book">
+            <a href="https://www.amazon.co.jp/%E5%88%87%E3%82%89%E3%81%9A%E3%81%AB1%E6%9E%9A%E3%81%A7%E6%8A%98%E3%82%8B%E3%81%A9%E3%81%86%E3%81%B6%E3%81%A4%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF-%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF-%E3%83%95%E3%83%81%E3%83%A2%E3%83%88%E3%83%A0%E3%83%8D%E3%82%B8/dp/4883377768">origami pet park</a>
           </div>
-
-          <div class="button-group">
-            <div class="download_cv">
-              <a href="https://www.amazon.co.jp/%E5%88%87%E3%82%89%E3%81%9A%E3%81%AB1%E6%9E%9A%E3%81%A7%E6%8A%98%E3%82%8B%E3%81%A9%E3%81%86%E3%81%B6%E3%81%A4%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF-%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88%E3%83%91%E3%83%BC%E3%82%AF-%E3%83%95%E3%83%81%E3%83%A2%E3%83%88%E3%83%A0%E3%83%8D%E3%82%B8/dp/4883377768">origami pet park</a>
-            </div>
-            <div class="hire_me">
-              <a href="https://www.amazon.co.jp/%E5%88%87%E3%82%89%E3%81%9A%E3%81%AB1%E6%9E%9A%E3%81%A7%E6%8A%98%E3%82%8B%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88-%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89-%E3%83%95%E3%83%81%E3%83%A2%E3%83%88-%E3%83%A0%E3%83%8D%E3%82%B8/dp/4883379795">origami pet island</a>
-            </div>
+          <div class="reference-book">
+            <a href="https://www.amazon.co.jp/%E5%88%87%E3%82%89%E3%81%9A%E3%81%AB1%E6%9E%9A%E3%81%A7%E6%8A%98%E3%82%8B%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88-%E3%81%8A%E3%82%8A%E3%81%8C%E3%81%BF%E3%83%9A%E3%83%83%E3%83%88%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89-%E3%83%95%E3%83%81%E3%83%A2%E3%83%88-%E3%83%A0%E3%83%8D%E3%82%B8/dp/4883379795">origami pet island</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+</section>
+<section id="contact">
+  <div class="container">
     <br>
-
-    <div id="myModal" class="modal">
-      <!-- The Close Button -->
-      <span class="close">&times;</span>
-      <!-- Modal Content (The Image) -->
-      <div id="caption"></div>
-      <img class="modal-content" id="img01">
-
-      <div id="caption"></div>
+    <br>
+    <h2>Contact</h2>
+    <div class="row" id="contact-form">
+      <%= render 'contact_form', message: @message %>
     </div>
-  </section>
-  <script>
-      // Get the modal
-    var modal = document.getElementById('myModal');
-    var modalImg = document.getElementById("img01");
-    var captionText = document.getElementById("caption");
+    <br>
+    <br>
+  </div>
+</section>
+<script>
+    // Get the modal
+  let modal = document.getElementById('myModal')
+  let modalImg = document.getElementById("img01")
+  let captionText = document.getElementById("caption")
 
-    $( ".origami-Img" ).click(function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
-        captionText.innerHTML = this.alt;     
+  $(".origami-Img").click(function() {
+      modal.style.display = "block"
+      modalImg.src = this.src
+      captionText.innerHTML = this.alt
+  })
+
+  // Get the <span> element that closes the modal
+  let span = document.getElementsByClassName("pic-close")[0]
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() { 
+    modal.style.display = "none"
+  }
+
+
+  function like(id) {
+    $.ajax({
+      url: '/photos/' + id + '/like',
+      method: "GET",
+      success: function(data) {
+        $(`#photo-${data.id}-count`).html('<strong>'+ data.count + '</strong>')
+      }
     });
+  }
 
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function() { 
-      modal.style.display = "none";
-    }
-
-  </script>
+  $('[data-toggle="tooltip"]').tooltip();
+</script>
 
 

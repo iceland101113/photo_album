@@ -1,0 +1,9 @@
+<div>
+  <% flash.each do |type, message| %>
+  <% next if message.blank? %>
+    <div class="alert <%= boostrap_class_for_flash(type) %>" role="alert">
+      <button class="close" data-dismiss='alert' >x</button>
+      <div><%= safe_join(Array(message), '<br>'.html_safe) %></div>
+    </div>
+  <% end %>
+</div>
