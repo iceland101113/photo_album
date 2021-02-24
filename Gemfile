@@ -43,7 +43,7 @@ gem 'foreman', '~> 0.87.2'
 gem 'fog-aws'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.20'
   # gem 'mysql2', '<0.5'
 end
 
