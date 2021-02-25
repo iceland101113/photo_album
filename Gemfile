@@ -41,6 +41,7 @@ gem 'sidekiq'
 gem 'pry'
 gem 'foreman', '~> 0.87.2'
 gem 'fog-aws'
+gem 'bcrypt'
 
 group :production do
   gem 'pg'
