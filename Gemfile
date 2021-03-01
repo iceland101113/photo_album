@@ -42,6 +42,7 @@ gem 'pry'
 gem 'foreman', '~> 0.87.2'
 gem 'fog-aws'
 gem 'bcrypt', '~> 3.1.13' 
+gem 'sentry-raven'
 
 group :production do
   gem 'pg'
