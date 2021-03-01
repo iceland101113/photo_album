@@ -1,5 +1,4 @@
 class MessageMailer < ApplicationMailer
-  default from: 'notifications@origami.com'
  
   def notify(message)
     @message = message
