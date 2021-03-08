@@ -8,7 +8,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       flash.now[:notice] = "Your message was successfully sent!"
-      MessageMailer.notify(@message).deliver_later
+      MessageMailer.notify(@message).deliver_now
     else
       flash.now[:notice] = "Your message was fail to sent!"
     end
