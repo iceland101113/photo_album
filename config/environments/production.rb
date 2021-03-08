@@ -71,7 +71,7 @@ Rails.application.configure do
     address: ENV['SMTP_ADDRESS'],
     user_name: ENV['SMTP_USER_NAME'],
     password: ENV['SMTP_PASSWORD'],
-    authentication: :plain,
+    authentication: :login,
     enable_starttls_auto: true
   }
 
