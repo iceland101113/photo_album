@@ -1,29 +1,29 @@
 <%= form_for(message, remote: :true) do |f| %>
   <div class="col-md-6">
     <div class="form-group">
-      <%= f.label :name, "Name" %>
+      <%= f.label :name, t('contact_form.name') %>
       <%= f.text_field :name, class: "form-control", required: :true %>
     </div>
   </div>
   <div class="col-md-6">
     <div class="form-group">
-      <%= f.label :email, "Email" %>
+      <%= f.label :email, t('contact_form.email') %>
       <%= f.text_field :email, class: "form-control", required: :true %>      
     </div>
   </div>
   <div class="col-md-12">
     <div class="form-group">
-      <%= f.label :subject, "Subject" %>
+      <%= f.label :subject, t('contact_form.subject') %>
       <%= f.text_field :subject, class: "form-control", required: :true %>
     </div>
   </div>
   <div class="col-md-12">
     <div class="form-group">
-      <%= f.label :message, "Message" %>
+      <%= f.label :message, t('contact_form.message') %>
       <%= f.text_area :message, class: "form-control message-input-field", required: :true %>
     </div>
   </div>
   <div class="form-group" style="text-align: center">
-    <%= f.submit 'Submit', class: "btn message-submit" %>
+    <%= f.submit t('contact_form.submit'), class: "btn message-submit" %>
   </div>
 <% end %>

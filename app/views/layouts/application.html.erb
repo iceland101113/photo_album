@@ -22,14 +22,24 @@
               <span class="icon-bar"></span>
             </button>
             <%= link_to image_tag('origami.png'), root_path, class: "navbar-brand" %>
-            <%= link_to "Huei Origami Work", root_path, class: "navbar-brand" %> 
+            <%= link_to t("website_title"), root_path, class: "navbar-brand" %> 
           </div>
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="pull-right text-right nav navbar-nav">
-              <li><a href="#works">Work</a></li>
+              <li><a href="#works"><%= t("work") %></a></li>
               <!-- <li><a href="#sp">Special Works</a></li> -->
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#about"><%= t("about") %></a></li>
+              <li><a href="#contact"><%= t("contact") %></a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-globe" aria-hidden="true" style="font-size: large;"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <%= link_to "中文", :locale => 'zh-TW', class: 'dropdown-item'  %>
+                  <div class="dropdown-divider"><br></div>
+                  <%= link_to "English", :locale => 'en', class: 'dropdown-item' %>
+                </div>
+              </li>
               <li><%= link_to '', admin_root_path %></li>
               <%# if current_user %>
                 <li><%= link_to('', destroy_user_session_path, method: :delete) %></li>
